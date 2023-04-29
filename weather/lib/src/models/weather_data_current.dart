@@ -1,3 +1,10 @@
+import 'package:weather/src/models/weather_data.dart';
+
+class WeatherDataCurrent {
+  final Current current;
+  WeatherDataCurrent({required this.current});
+}
+
 class Current {
   double? temp;
   int? humidity;
