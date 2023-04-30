@@ -110,8 +110,7 @@ class HourlyDetails extends StatelessWidget {
 
   String getTime(final timeStamp) {
     DateTime time = DateTime.fromMillisecondsSinceEpoch(timeStamp * 1000);
-    String x = DateFormat('jm').format(time);
-    return x;
+    return DateFormat.jm('pt_br').format(time);
   }
 
   @override
@@ -120,7 +119,7 @@ class HourlyDetails extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         Container(
-          margin: EdgeInsets.only(top: 10),
+          margin: const EdgeInsets.only(top: 10),
           child: Text(
             getTime(timeStamp),
             style: TextStyle(
@@ -131,7 +130,7 @@ class HourlyDetails extends StatelessWidget {
           ),
         ),
         Container(
-          margin: EdgeInsets.all(5),
+          margin: const EdgeInsets.all(5),
           child: Image.asset(
             'assets/weather/$weatherIcon.png',
             height: 40,
@@ -139,7 +138,7 @@ class HourlyDetails extends StatelessWidget {
           ),
         ),
         Container(
-          margin: EdgeInsets.only(bottom: 10),
+          margin: const EdgeInsets.only(bottom: 10),
           child: Text(
             "$tempº",
             style: TextStyle(

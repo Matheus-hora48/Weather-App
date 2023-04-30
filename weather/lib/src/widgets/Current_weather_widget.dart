@@ -13,7 +13,7 @@ class CurrentWeather extends StatelessWidget {
     return Column(
       children: [
         temperatureAreaWidget(),
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
         currentWeatherMoreDetailWidget(),

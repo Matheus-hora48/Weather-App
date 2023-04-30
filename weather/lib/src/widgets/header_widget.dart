@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:get/get.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
 import 'package:weather/src/controllers/global_controller.dart';
 
@@ -20,7 +21,10 @@ class _HeaderWidgetState extends State<HeaderWidget> {
     permanent: true,
   );
 
-  String date = DateFormat('yMMMd').format(DateTime.now());
+  String getData(final date) {
+    initializeDateFormatting();
+    return DateFormat.MMMMd('pt_BR').format(date);
+  }
 
   @override
   void initState() {
@@ -68,7 +72,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
           ),
           alignment: Alignment.topLeft,
           child: Text(
-            date,
+            getData(DateTime.now()),
             style: TextStyle(
               fontSize: 14,
               color: Colors.grey[700],

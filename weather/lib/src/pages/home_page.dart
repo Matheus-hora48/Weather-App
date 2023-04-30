@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:weather/src/controllers/global_controller.dart';
+import 'package:weather/src/models/weather/daily.dart';
 import 'package:weather/src/models/weather_data_hourly.dart';
 import 'package:weather/src/widgets/Current_weather_widget.dart';
+import 'package:weather/src/widgets/daily_data_forecast.dart';
 import 'package:weather/src/widgets/header_widget.dart';
 import 'package:weather/src/widgets/hourlly_data_widget.dart';
 
@@ -41,7 +43,7 @@ class _HomePageState extends State<HomePage> {
                             .getWeatherData()
                             .getCurrentWeather(),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       HourlyDataWidget(
@@ -49,6 +51,10 @@ class _HomePageState extends State<HomePage> {
                             .getWeatherData()
                             .getHourlyWeather(),
                       ),
+                      DailyDataForecast(
+                        weatherDataDaily:
+                            globalController.getWeatherData().getDailyWeather(),
+                      )
                     ],
                   ),
                 ),

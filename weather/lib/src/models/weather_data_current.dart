@@ -14,6 +14,7 @@ class Current {
   int? temp;
   int? humidity;
   int? clouds;
+  double? uvIndex;
   double? windSpeed;
   List<Weather>? weather;
 
