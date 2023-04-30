@@ -13,15 +13,91 @@ class CurrentWeather extends StatelessWidget {
     return Column(
       children: [
         temperatureAreaWidget(),
+        SizedBox(
+          height: 15,
+        ),
         currentWeatherMoreDetailWidget(),
       ],
     );
   }
 
-  Widget currentWeatherMoreDetailWidget() {}
+  Widget currentWeatherMoreDetailWidget() {
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Container(
+              height: 60,
+              width: 60,
+              padding: EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: CustomColors.cardColor,
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: Image.asset('assets/icons/windspeed.png'),
+            ),
+            Container(
+              height: 60,
+              width: 60,
+              padding: EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: CustomColors.cardColor,
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: Image.asset('assets/icons/clouds.png'),
+            ),
+            Container(
+              height: 60,
+              width: 60,
+              padding: EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: CustomColors.cardColor,
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: Image.asset('assets/icons/humidity.png'),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            SizedBox(
+              height: 60,
+              width: 60,
+              child: Text(
+                "${weatherDataCurrent.current.windSpeed} km/h",
+                textAlign: TextAlign.center,
+              ),
+            ),
+            SizedBox(
+              height: 60,
+              width: 60,
+              child: Text(
+                "${weatherDataCurrent.current.clouds}%",
+                textAlign: TextAlign.center,
+              ),
+            ),
+            SizedBox(
+              height: 60,
+              width: 60,
+              child: Text(
+                "${weatherDataCurrent.current.humidity}%",
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ],
+        )
+      ],
+    );
+  }
 
   Widget temperatureAreaWidget() {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         Image.asset(
           "assets/weather/${weatherDataCurrent.current.weather![0].icon}.png",
@@ -36,7 +112,7 @@ class CurrentWeather extends StatelessWidget {
         RichText(
           text: TextSpan(children: [
             TextSpan(
-              text: "${weatherDataCurrent.current.temp!.toInt()}ºC",
+              text: "${weatherDataCurrent.current.temp!.toInt()}º",
               style: const TextStyle(
                 fontWeight: FontWeight.w600,
                 fontSize: 68,
@@ -44,7 +120,7 @@ class CurrentWeather extends StatelessWidget {
               ),
             ),
             TextSpan(
-              text: "${weatherDataCurrent.current.weather![0].lon}",
+              text: "${weatherDataCurrent.current.weather![0].description}",
               style: const TextStyle(
                 fontWeight: FontWeight.w400,
                 fontSize: 14,

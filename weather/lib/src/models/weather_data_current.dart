@@ -1,5 +1,3 @@
-import 'package:weather/src/models/weather_data.dart';
-
 class WeatherDataCurrent {
   final Current current;
   WeatherDataCurrent({required this.current});
@@ -47,35 +45,29 @@ class Current {
 }
 
 class Weather {
-  double? lat;
-  double? lon;
-  String? timezone;
-  int? timezoneOffset;
-  Current? current;
+  int? id;
+  String? main;
+  String? description;
+  String? icon;
 
   Weather({
-    this.lat,
-    this.lon,
-    this.timezone,
-    this.timezoneOffset,
-    this.current,
+    this.id,
+    this.main,
+    this.description,
+    this.icon,
   });
 
   factory Weather.fromJson(Map<String, dynamic> json) => Weather(
-        lat: (json['lat'] as num?)?.toDouble(),
-        lon: (json['lon'] as num?)?.toDouble(),
-        timezone: json['timezone'] as String?,
-        timezoneOffset: json['timezone_offset'] as int?,
-        current: json['current'] == null
-            ? null
-            : Current.fromJson(json['current'] as Map<String, dynamic>),
+        id: json['id'] as int?,
+        main: json['main'] as String?,
+        description: json['description'] as String?,
+        icon: json['icon'] as String?,
       );
 
   Map<String, dynamic> toJson() => {
-        'lat': lat,
-        'lon': lon,
-        'timezone': timezone,
-        'timezone_offset': timezoneOffset,
-        'current': current?.toJson(),
+        'id': id,
+        'main': main,
+        'description': description,
+        'icon': icon,
       };
 }
