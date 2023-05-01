@@ -3,7 +3,9 @@ import 'package:get/get.dart';
 import 'package:weather/src/controllers/global_controller.dart';
 import 'package:weather/src/models/weather/daily.dart';
 import 'package:weather/src/models/weather_data_hourly.dart';
+import 'package:weather/src/utils/custom_colors.dart';
 import 'package:weather/src/widgets/Current_weather_widget.dart';
+import 'package:weather/src/widgets/comfort_level.dart';
 import 'package:weather/src/widgets/daily_data_forecast.dart';
 import 'package:weather/src/widgets/header_widget.dart';
 import 'package:weather/src/widgets/hourlly_data_widget.dart';
@@ -27,8 +29,18 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: Obx(
           () => globalController.checkLoading().isTrue
-              ? const Center(
-                  child: CircularProgressIndicator.adaptive(),
+              ? Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/icons/clouds.png',
+                        height: 200,
+                        width: 200,
+                      ),
+                      const CircularProgressIndicator.adaptive(),
+                    ],
+                  ),
                 )
               : Center(
                   child: ListView(
@@ -54,6 +66,18 @@ class _HomePageState extends State<HomePage> {
                       DailyDataForecast(
                         weatherDataDaily:
                             globalController.getWeatherData().getDailyWeather(),
+                      ),
+                      Container(
+                        height: 1,
+                        color: CustomColors.dividerLine,
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      ComfortLevel(
+                        weatherDataCurrent: globalController
+                            .getWeatherData()
+                            .getCurrentWeather(),
                       )
                     ],
                   ),

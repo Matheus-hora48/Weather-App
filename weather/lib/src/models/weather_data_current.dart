@@ -15,6 +15,7 @@ class Current {
   int? humidity;
   int? clouds;
   double? uvIndex;
+  double? feelsLike;
   double? windSpeed;
   List<Weather>? weather;
 
@@ -22,6 +23,8 @@ class Current {
     this.temp,
     this.humidity,
     this.clouds,
+    this.uvIndex,
+    this.feelsLike,
     this.windSpeed,
     this.weather,
   });
@@ -30,6 +33,8 @@ class Current {
         temp: (json['temp'] as num?)?.round(),
         humidity: json['humidity'] as int?,
         clouds: json['clouds'] as int?,
+        feelsLike: (json['feels_like'] as num?)?.toDouble(),
+        uvIndex: (json['uvi'] as num?)?.toDouble(),
         windSpeed: (json['wind_speed'] as num?)?.toDouble(),
         weather: (json['weather'] as List<dynamic>?)
             ?.map((e) => Weather.fromJson(e as Map<String, dynamic>))
@@ -40,6 +45,8 @@ class Current {
         'temp': temp,
         'humidity': humidity,
         'clouds': clouds,
+        'feels_like': feelsLike,
+        'uvi': uvIndex,
         'wind_speed': windSpeed,
         'weather': weather?.map((e) => e.toJson()).toList(),
       };

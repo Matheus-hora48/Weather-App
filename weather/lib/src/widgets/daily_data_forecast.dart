@@ -31,9 +31,9 @@ class DailyDataForecast extends StatelessWidget {
           Container(
             alignment: Alignment.topLeft,
             margin: const EdgeInsets.only(bottom: 10),
-            child: const Text(
-              'Próximos dias',
-              style: TextStyle(
+            child: Text(
+              'Próximos ${weatherDataDaily.daily.length - 1} dias',
+              style: const TextStyle(
                 color: CustomColors.textColorBlack,
                 fontSize: 17,
               ),
