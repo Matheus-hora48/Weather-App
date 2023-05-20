@@ -1,16 +1,27 @@
-# weather
+# Weather App
+![Weather Logo](https://raw.githubusercontent.com/Matheus-hora48/Weather-App/main/assets/icons/clouds.png)
 
-A new Flutter project.
+O Weather App é um aplicativo para dispositivos móveis e web que nos ajuda a saber como será o clima em diferentes lugares. Ele é desenvolvido usando uma linguagem de programação chamada Flutter, que permite criar aplicativos para diferentes plataformas, como smartphones e computadores.
 
-## Getting Started
+O aplicativo utiliza tecnologias especiais para fornecer informações precisas sobre o clima. Por exemplo, ele usa a localização do dispositivo para saber onde você está e mostrar a previsão do tempo específica para essa região. Isso significa que ele pode mostrar se vai chover, fazer sol, ou estar nublado onde você está.
 
-This project is a starting point for a Flutter application.
+Para obter essas informações, o aplicativo se conecta a uma fonte de dados confiável na internet, chamada API de previsão do tempo. Essa API é como uma grande base de dados que contém informações sobre o clima em diferentes lugares do mundo. O aplicativo solicita essas informações e as exibe de forma fácil de entender.
 
-A few resources to get you started if this is your first Flutter project:
+Essa é uma ferramenta útil para planejar suas atividades diárias, como saber se vai precisar de um guarda-chuva ou se pode aproveitar o dia ao ar livre. O Weather App é projetado para ser fácil de usar, mesmo para pessoas que não têm muito conhecimento em tecnologia.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Resumindo, o Weather App é um aplicativo que nos ajuda a saber como será o clima em diferentes lugares. Ele usa tecnologias especiais para fornecer informações precisas e tem uma interface amigável para facilitar seu uso. É uma ferramenta útil para nos mantermos informados sobre o clima e nos ajudar a planejar nossas atividades diárias.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## O app usa as seguintes tecnologias
+
+- geolocator
+- geocoding
+- sleek_circular_slider
+- http
+- get
+- intl
+
+### Tela de Principal
+
+![Tela principal](https://raw.githubusercontent.com/Matheus-hora48/Weather-App/main/image-app/image1.jpg)
+
+![Tela principal](https://raw.githubusercontent.com/Matheus-hora48/Weather-App/main/image-app/image2.jpg)
