@@ -20,7 +20,7 @@ Resumindo, o Weather App é um aplicativo que nos ajuda a saber como será o cli
 - get
 - intl
 
-### Tela de Principal
+### 1. Tela de Principal
 
 ![Tela principal](https://raw.githubusercontent.com/Matheus-hora48/Weather-App/main/image-app/image1.jpg)
 
